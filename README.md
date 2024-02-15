@@ -9,10 +9,21 @@ movies,   directors,   and  genres.  Users  will  be  able  to  sign  up,   upda
 personal  information,   and  create  a  list  of  their  favorite  movies. 
 
 ### Installation
-  1. Install Parcel
+
+  1. Required dependencies 
 
     npm install -g parcel
 
+    npm install -g process
+
+  2. Install React and React Dom
+
+    npm install
+
+### Run the application
   
+    parcel src/index.html
+
+  Open the Web Browser at http://localhost:1234
 
 
