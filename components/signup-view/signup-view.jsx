@@ -3,18 +3,19 @@ import React from "react";
 import { useState } from "react";
 
 export const SingupView = () => {
-  const [username, setUsername] = useState();
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
-  const [birthday, setBirthday] = useState();
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [birthday, setBirthday] = useState("");
 
   const handleSubmit = (event) => {
-    event.preventDefault(event)
+    event.preventDefault(event);
+    const isoDate = new Date(birthday);
 
     const data = {
       UserName: username,
       Email: email,
-      Birthdate: birthday,
+      Birthday: isoDate,
       Password: password
     };
 
