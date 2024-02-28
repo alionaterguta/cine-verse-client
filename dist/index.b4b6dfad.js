@@ -27422,7 +27422,7 @@ const MainView = ()=>{
                                     columnNumber: 17
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                                    children: " SimilarMovies "
+                                    children: " Similar Movies "
                                 }, void 0, false, {
                                     fileName: "components/main-view/main-view.jsx",
                                     lineNumber: 66,
@@ -27434,7 +27434,6 @@ const MainView = ()=>{
                                     }).map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
                                             md: 4,
                                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
-                                                // key={movie.id}
                                                 movie: movie,
                                                 onMovieClick: (newSelectedMovie)=>{
                                                     setSelectedMovie(newSelectedMovie);
@@ -27474,7 +27473,7 @@ const MainView = ()=>{
                 children: "The list is empty!"
             }, void 0, false, {
                 fileName: "components/main-view/main-view.jsx",
-                lineNumber: 93,
+                lineNumber: 92,
                 columnNumber: 11
             }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                 children: [
@@ -27488,12 +27487,12 @@ const MainView = ()=>{
                                 }
                             }, void 0, false, {
                                 fileName: "components/main-view/main-view.jsx",
-                                lineNumber: 98,
+                                lineNumber: 97,
                                 columnNumber: 17
                             }, undefined)
                         }, movie.id, false, {
                             fileName: "components/main-view/main-view.jsx",
-                            lineNumber: 97,
+                            lineNumber: 96,
                             columnNumber: 15
                         }, undefined)),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
@@ -27505,7 +27504,7 @@ const MainView = ()=>{
                         children: "Logout"
                     }, void 0, false, {
                         fileName: "components/main-view/main-view.jsx",
-                        lineNumber: 106,
+                        lineNumber: 105,
                         columnNumber: 13
                     }, undefined)
                 ]
@@ -27531,7 +27530,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"8z54c","../movie-view/movie-view":"lNY7v","@parcel/transformer-js/src/esmodule-helpers.js":"93wQI","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"fkfCt","../login-view/login-view":"82yVY","../signup-view/signup-view":"jDmiJ","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","react-bootstrap/Button":"aPzUt"}],"8z54c":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"8z54c","../movie-view/movie-view":"lNY7v","../login-view/login-view":"82yVY","../signup-view/signup-view":"jDmiJ","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","react-bootstrap/Button":"aPzUt","@parcel/transformer-js/src/esmodule-helpers.js":"93wQI","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"fkfCt"}],"8z54c":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$42ca = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27609,37 +27608,7 @@ $RefreshReg$(_c, "MovieCard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"93wQI","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"fkfCt","prop-types":"7wKI2","react-bootstrap":"3AD9A"}],"93wQI":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || Object.prototype.hasOwnProperty.call(dest, key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"7wKI2":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","prop-types":"7wKI2","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"93wQI","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"fkfCt"}],"7wKI2":[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -29730,7 +29699,37 @@ module.exports = require("c4c10cbba9862d5f");
     exports.jsxs = jsxs;
 })();
 
-},{"593632ccebda0d3a":"21dqq"}],"dVixI":[function(require,module,exports) {
+},{"593632ccebda0d3a":"21dqq"}],"93wQI":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || Object.prototype.hasOwnProperty.call(dest, key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"dVixI":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "DEFAULT_BREAKPOINTS", ()=>DEFAULT_BREAKPOINTS);
@@ -30887,7 +30886,7 @@ $RefreshReg$(_c, "MovieView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"93wQI","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"fkfCt","prop-types":"7wKI2","react-bootstrap/Button":"aPzUt"}],"82yVY":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","prop-types":"7wKI2","react-bootstrap/Button":"aPzUt","@parcel/transformer-js/src/esmodule-helpers.js":"93wQI","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"fkfCt"}],"82yVY":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$cb9c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -31032,7 +31031,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"93wQI","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"fkfCt","react-bootstrap/Form":"iBZ80","react-bootstrap/Button":"aPzUt"}],"jDmiJ":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Form":"iBZ80","react-bootstrap/Button":"aPzUt","@parcel/transformer-js/src/esmodule-helpers.js":"93wQI","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"fkfCt"}],"jDmiJ":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$7971 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -31240,6 +31239,6 @@ $RefreshReg$(_c, "SingupView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"93wQI","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"fkfCt","react-bootstrap/Form":"iBZ80","react-bootstrap/Button":"aPzUt"}],"i5LP7":[function() {},{}]},["iyeFO","haGO4","d8Dch"], "d8Dch", "parcelRequireb73a")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Form":"iBZ80","react-bootstrap/Button":"aPzUt","@parcel/transformer-js/src/esmodule-helpers.js":"93wQI","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"fkfCt"}],"i5LP7":[function() {},{}]},["iyeFO","haGO4","d8Dch"], "d8Dch", "parcelRequireb73a")
 
 //# sourceMappingURL=index.b4b6dfad.js.map

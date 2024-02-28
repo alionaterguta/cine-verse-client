@@ -63,7 +63,7 @@ export const MainView = () => {
             <Row>
               <Col className="mb-5">
                 <hr />
-                <h3> SimilarMovies </h3>
+                <h3> Similar Movies </h3>
                 <Row>
                   {movies
                     .filter((movie) => {
@@ -77,7 +77,6 @@ export const MainView = () => {
                     .map((movie) => (
                       <Col key={movie.id} md={4}>
                         <MovieCard
-                          // key={movie.id}
                           movie={movie}
                           onMovieClick={(newSelectedMovie) => {
                             setSelectedMovie(newSelectedMovie);
