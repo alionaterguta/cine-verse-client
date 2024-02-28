@@ -16,11 +16,11 @@ personal  information,   and  create  a  list  of  their  favorite  movies.
 
     npm install -g process
 
-  2. Install React and React Dom
+  2. Install React, React Dom, Bootstrap and React-Bootstrap
 
     npm install
 
-### Run the application
+ ### Run the application
   
     parcel src/index.html
 
