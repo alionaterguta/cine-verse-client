@@ -19,15 +19,6 @@ export const MainView = () => {
   const [token, setToken] = useState(storedToken ? storedToken : null);
   const [movies, setMovies] = useState([]);
 
-  //Find similar movies based on genre
-  // const selectedMovie = movies.find((m) => m.id === movieId);
-  // const similarMovies = movies.filter((m) => {
-  //   return (
-  //     m.id !== selectedMovie.id &&s
-  //     m.genre.some((genre) => selectedMovie.genre.includes(genre)) 
-  //   )}
-  //   );
-  
   useEffect(() => {
     if (!token) {
       return;
@@ -71,11 +62,12 @@ export const MainView = () => {
             {user ? (
               <Navigate to="/" />
             ) : (
-              <Col md={4}>
+              <Col md={4}>  
                 <SingupView 
                 />
               </Col>
             )}
+            
           </>
           }
           />
@@ -100,15 +92,15 @@ export const MainView = () => {
         <Route 
         path="/profile" 
         element={
-          <>
+          <Col md={6} >
           {user ? (
           <ProfileView
           token={token}
           user={user}
           movies={movies}
-          />) : (<Col> The user is not set!</Col>)
+          />) : (<Navigate to="/login" />)
           } 
-        </>
+        </Col>
         }
         />
         <Route 

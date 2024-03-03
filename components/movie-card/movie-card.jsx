@@ -31,6 +31,7 @@ useEffect(() => {
       throw new Error("Failed to add movie to favorites.");
     }
     alert("Movie added to favorites successfully!");
+    window.location.reload();
     return response.json()
   })
   .then((user) => {
@@ -60,6 +61,7 @@ const removeFromFavorites = () => {
       throw new Error("Failed to remove movie from favorites.");
     }
     alert("Movie removed from favorites successfully!");
+    window.location.reload();
     return response.json()
   })
   .then((user) => {

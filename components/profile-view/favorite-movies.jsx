@@ -10,10 +10,13 @@ export const FavoriteMovies = ({user, favoriteMovies}) => {
 
   return (
     <Row>
-      <Col md={4}>
-        <h3>My favorite movies</h3>
+      <Col md={12}>
+      <div>
+      </div>
+      <h3>List of my favorite movies</h3>
       </Col>
       <Row>
+      <br />
         {favoriteMovies.map((movie) => {
           return (
             <Col key={movie.id} md={4}>

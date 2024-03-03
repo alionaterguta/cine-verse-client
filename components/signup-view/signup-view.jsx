@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Form from"react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import { Navigate } from "react-router";
 
 export const SingupView = () => {
   const [username, setUsername] = useState("");
@@ -29,7 +30,6 @@ export const SingupView = () => {
 }).then((response) => {
   if (response.ok) {
     alert("Signup successful");
-    window.location.reload();
   }else{
     alert("Signup failed");
   }

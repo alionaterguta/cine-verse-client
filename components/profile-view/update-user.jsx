@@ -10,7 +10,7 @@ export const UpdateUser = ({ formData, handleUpdate, handleSubmit }) => {
     <Row>
       <Form onSubmit={handleSubmit}>
         <br />
-        <h2> You want to make some changes to your profile data? </h2>
+        <h2> Would you like to update your profile information? </h2>
         <Form.Group controlId="formUsername">
           <Form.Label>Username:</Form.Label>
           <Form.Control
@@ -20,12 +20,13 @@ export const UpdateUser = ({ formData, handleUpdate, handleSubmit }) => {
             onChange={(e) => handleUpdate(e)}
             required
           />
+        <br />
         </Form.Group>
         <Form.Group controlId="formBirthday">
           <Form.Label> Birthday: </Form.Label>
           <Form.Control
             type="date"
-            value={formData.Birthday}
+            value={formData.Birthdate}
             onChange={(e) => handleUpdate(e)}
             required
           />
@@ -42,22 +43,26 @@ export const UpdateUser = ({ formData, handleUpdate, handleSubmit }) => {
         </Form.Group>
         <br />
         <Form.Group controlId="formPassword">
-          <Form.Label>Password:</Form.Label>
+          <Form.Label>Password:
+            <p>Please enter your old password or choose a new one.
+            Your new password must be at least 8 characters long.</p>
+          </Form.Label>
           <Form.Control
             type="password"
             minLength={8}
             value={formData.Password}
             onChange={(e) => handleUpdate(e)}
             required
-            placeholder="Password at least 8 characters"
           />
         </Form.Group>
         <br />
         <Button variant="primary" type="submit">
           {" "}
           Submit changes{" "}
-        </Button>
+        </Button> 
       </Form>
-    </Row>
+      <br /> 
+     </Row>
+    
   );
 };
