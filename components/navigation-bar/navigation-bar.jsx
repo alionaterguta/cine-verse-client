@@ -1,16 +1,26 @@
 import PropTypes from "prop-types";
-import Navbar from "react-bootstrap/Navbar";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-// import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
+import Container from "react-bootstrap/Container";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import Logo from "../../img/cine-verse-logo.svg";
+
+
 
 export const NavigationBar = ({ user, onLoggedOut }) => {
   return (
+   
     <Navbar bg="light" expand="lg">
       <Container>
         <Navbar.Brand as={Link} to="/">
-          Cine-Verse App
+        <img
+            src= {Logo}
+            width="40"
+            height="40"
+            className="d-inline-block align-top"
+            alt="Logo"
+        /> {' '}
+            Cine-Verse App
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -22,8 +32,8 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
               </>
             ) : (    
               <>
-              <Nav.Link as={Link} to="/">Home</Nav.Link>
-              <Nav.Link as={Link} to="/users">Profile</Nav.Link> 
+              <Nav.Link as={Link} to="/">Movies</Nav.Link>
+              <Nav.Link as={Link} to="/profile">Profile</Nav.Link> 
               <Nav.Link onClick={onLoggedOut}>Logout</Nav.Link> 
               </>
             )}

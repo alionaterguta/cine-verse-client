@@ -1,7 +1,9 @@
+import React from "react";
+import PropTypes from "prop-types";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom"
 import { MovieCard } from "../movie-card/movie-card";
-import PropTypes from "prop-types";
+
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -18,13 +20,12 @@ export const MovieView = ({ movies }) => {
       m.genre.some((genre) => movie.genre.includes(genre)) 
     )}
     );
- 
 
   return (
     <div>
-      {/* <div> 
+     <div> 
         <img height={300} src={movie.image} />
-      </div> */}
+      </div> 
       <div>
         <span>Title: </span>
         <span>{movie.title}</span>

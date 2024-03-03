@@ -12,7 +12,7 @@ import Col from "react-bootstrap/Col";
 import {BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 export const MainView = () => {
-  const storedUser = localStorage.getItem("user");
+  const storedUser = JSON.parse(localStorage.getItem("user"));
   const storedToken = localStorage.getItem("token");
 
   const [user, setUser] = useState(storedUser ? storedUser : null);
@@ -23,11 +23,11 @@ export const MainView = () => {
   // const selectedMovie = movies.find((m) => m.id === movieId);
   // const similarMovies = movies.filter((m) => {
   //   return (
-  //     m.id !== selectedMovie.id &&
+  //     m.id !== selectedMovie.id &&s
   //     m.genre.some((genre) => selectedMovie.genre.includes(genre)) 
   //   )}
   //   );
-
+  
   useEffect(() => {
     if (!token) {
       return;
@@ -40,6 +40,7 @@ export const MainView = () => {
         const moviesFromApi = data.map((movie) => {
           return {
             id: movie._id,
+            image:movie.ImgPath,
             title: movie.Title,
             genre: movie.Genre,
             description: movie.Description,
@@ -58,7 +59,6 @@ export const MainView = () => {
       setUser(null);
       setToken(null);
       localStorage.clear();
-
      }}
     />
   <br />
@@ -72,7 +72,8 @@ export const MainView = () => {
               <Navigate to="/" />
             ) : (
               <Col md={4}>
-                <SingupView />
+                <SingupView 
+                />
               </Col>
             )}
           </>
@@ -97,11 +98,17 @@ export const MainView = () => {
           } 
         />
         <Route 
-        path="/users" 
+        path="/profile" 
         element={
+          <>
+          {user ? (
           <ProfileView
-          />
-
+          token={token}
+          user={user}
+          movies={movies}
+          />) : (<Col> The user is not set!</Col>)
+          } 
+        </>
         }
         />
         <Route 
@@ -136,6 +143,7 @@ export const MainView = () => {
               {movies.map((movie) => (
                 <Col className="mb-5" key={movie.id} md={3}>
                   <MovieCard
+                    isFavorite={user.FavoriteMovies.includes(movie.title)}
                     movie={movie}
                   />
                 </Col>
@@ -145,8 +153,8 @@ export const MainView = () => {
          </>
           }
           />
-          </Routes>
-        </Row>
+      </Routes>
+    </Row>
   </BrowserRouter>
   );
 };

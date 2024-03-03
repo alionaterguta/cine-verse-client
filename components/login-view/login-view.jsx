@@ -14,6 +14,7 @@ export const LoginView = ({ onLoggedIn }) => {
       UserName: username,
       Password: password,
     };
+
     fetch("https://cine-verse-b8832aa84c3e.herokuapp.com/login", {
       method: "POST",
       headers: {
@@ -26,7 +27,7 @@ export const LoginView = ({ onLoggedIn }) => {
       console.log("Login response: ", data);
       if (data.user) {
         localStorage.setItem("token", data.token);
-        localStorage.setItem("user", data.user);
+        localStorage.setItem("user",  JSON.stringify(data.user));
         onLoggedIn(data.user, data.token);
       } else {
         alert("No such user");
