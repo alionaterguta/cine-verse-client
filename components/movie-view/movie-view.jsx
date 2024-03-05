@@ -7,6 +7,7 @@ import { MovieCard } from "../movie-card/movie-card";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import "./movie-view.scss";
 
 export const MovieView = ({ movies }) => {
   const { movieId } = useParams();
@@ -27,37 +28,28 @@ export const MovieView = ({ movies }) => {
         <img height={300} src={movie.image} />
       </div> 
       <div>
-        <span>Title: </span>
-        <span>{movie.title}</span>
+        <h4>{movie.title}</h4>
       </div>
       <div>
-        <span>Description: </span>
-        <span>{movie.description}</span>
+        <p>{movie.description}</p>
       </div>
       <div>
-        <span>Genre: </span>
-        <span>{movie.genre + " "}</span>
+        <h6>Genre: {movie.genre.join(", ")}</h6>
       </div>
       <div>
-        <span>Director: </span>
-        <span>{movie.director}</span>
+        <h6>Director: {movie.director}</h6>
       </div>
-      {/* <div>
-        <span>Featured: </span>
-        <span>{movie.featured}</span>
-      </div> */}
+
       <Link to={`/`}>
         <Button className="back-button"> Back </Button>
       </Link>
 
       <Col className="mb-5">
-        <br />
-        <hr />
-        <br />
-        <h3> SimilarMovies </h3>
+   <hr />
+        <h3 class="title"> SimilarMovies </h3>
           <Row>
           {similarMovies.map((movie) => (
-            <Col key={movie.id} md={4}>
+            <Col key={movie.id} md={6}>
               <MovieCard
                 movie={movie}
               />

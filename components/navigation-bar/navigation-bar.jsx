@@ -12,12 +12,12 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
    
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand as={Link} to="/">
+        <Navbar.Brand as={Link} to="/"  className="d-flex align-items-center">
         <img
             src= {Logo}
             width="40"
             height="40"
-            className="d-inline-block align-top"
+            className="d-inline-block me-2"
             alt="Logo"
         /> {' '}
             Cine-Verse App

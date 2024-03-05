@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import "./movie-card.scss"
 
 export const MovieCard = ({movie, isFavorite }) => {
   const storedToken = localStorage.getItem("token");
@@ -94,12 +95,12 @@ const handleAddToFavorites = () => {
 
   return (
     <>
-    <Link to={`/movies/${encodeURIComponent(movie.id)}`}>
+    <Link className="link-card" to={`/movies/${encodeURIComponent(movie.id)}`}>
     <Card>
       <Card.Img variant="top" src={movie.image} />
       <Card.Body>
         <Card.Title>{movie.title}</Card.Title>
-        <Card.Text>{movie.genre}</Card.Text>
+        <Card.Text>{movie.genre.join(", ")}</Card.Text>
       </Card.Body>
     </Card>
     </Link>
