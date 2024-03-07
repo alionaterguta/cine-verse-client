@@ -116,6 +116,7 @@ const handleAddToFavorites = () => {
 }
 
 MovieCard.propTypes = {
+  isFavorite: PropTypes.bool.isRequired,
   movie: PropTypes.shape({
     title: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,

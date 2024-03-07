@@ -1,7 +1,6 @@
 import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col"
-// import 
 
 import { useEffect, useState } from "react";
 import { FavoriteMovies } from "./favorite-movies";
@@ -10,23 +9,23 @@ import { Card, Button, Image} from "react-bootstrap";
 import Profile_img from "../../img/user_profile_icon.png";
 import "./profile-view.scss";
 
-export const ProfileView = ({ token, user, movies }) => {
+export const ProfileView = ({ token, user, movies, onSubmit }) => {
   const storedUser = JSON.parse(localStorage.getItem("user"));
 
   const [username, setUsername] = useState(user.UserName);
   const [email, setEmail] = useState(user.Email);
   const [birthdate, setBirthdate] = useState(user.Birthdate);
-  const [password, setPassword] = useState(null);
+  const [password, setPassword] = useState("");
 
   const favoriteMovies = movies.filter(m => user.FavoriteMovies.includes(m.title));
-  
+
   const formData = {
     UserName: username,
     Email: email,
     Password: password
   };
 
-  formData.Birthdate = new Date(birthdate).toISOString().substring(0, 10);
+  formData.Birthdate = birthdate ? new Date(birthdate).toISOString().substring(0, 10) : null;
 
   const handleSubmit = (event) => {
     event.preventDefault(event);
@@ -40,22 +39,18 @@ export const ProfileView = ({ token, user, movies }) => {
          Authorization: `Bearer ${token}` }
       }
     )
-     .then((response) => {
+    .then((response) => {
       if (response.ok) {
         alert("Update successful");
-        localStorage.clear();
-        window.location.reload();
         return response.json()
       }
-       alert("Update failed");
-      })
-      .then((user) => {
-        if (user) {
-          localStorage.setItem('user', JSON.stringify(user));
-          setUser(user)
-        }    
-      })
-      .catch((error) => {
+        alert("Update failed");
+     })
+    .then((data) => {
+      localStorage.setItem("user", JSON.stringify(data));
+      onSubmit(data);
+    })
+    .catch((error) => {
         console.error(error);
       });
 };
@@ -94,7 +89,6 @@ const handleDeleteAccount = (id) => {
   });
 };
 
-  
   return (
     <>
       <Row>
@@ -115,8 +109,7 @@ const handleDeleteAccount = (id) => {
         </Col>
         <Card.Title><h2> Hello {username}! </h2></Card.Title>
         <Card.Text>
-          {/* <h6>{username}</h6> */}
-          <h6>{email}</h6>
+          {email}
         </Card.Text>
         <br />
         <Button onClick={() => handleDeleteAccount(storedUser._id)} 
@@ -136,12 +129,8 @@ const handleDeleteAccount = (id) => {
       </Row>
       <hr />
        <Row className="justify-content-center">
-       
           <FavoriteMovies user={user} favoriteMovies={favoriteMovies} />
-        
       </Row>
     </>
   ); 
 }
-  
-

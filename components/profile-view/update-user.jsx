@@ -1,8 +1,8 @@
 import React from "react";
-import {useState} from "react";
 import Form from"react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
+import PropTypes from "prop-types";
 
 export const UpdateUser = ({ formData, handleUpdate, handleSubmit }) => {
 
@@ -10,7 +10,7 @@ export const UpdateUser = ({ formData, handleUpdate, handleSubmit }) => {
     <Row>
       <Form onSubmit={handleSubmit}>
         <br />
-        <h2> Update my profile information </h2>
+        <h2> Update profile information </h2>
         <Form.Group controlId="formUsername">
           <Form.Label>Username:</Form.Label>
           <Form.Control
@@ -59,7 +59,11 @@ export const UpdateUser = ({ formData, handleUpdate, handleSubmit }) => {
         </Button> 
         </Form>  
       <br /> 
-     </Row>
-    
+     </Row>   
   );
+};
+UpdateUser.propTypes = {
+  formData: PropTypes.object.isRequired,
+  handleUpdate: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired
 };

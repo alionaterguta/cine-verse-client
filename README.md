@@ -26,4 +26,10 @@ personal  information,   and  create  a  list  of  their  favorite  movies.
 
   Open the Web Browser at http://localhost:1234
 
+### Deployment and hosting on Netlify
+
+  ## Install Parcel as a local developer dependency inside your project
+
+    npm install --save-dev  parcel@2.11.0
+
 

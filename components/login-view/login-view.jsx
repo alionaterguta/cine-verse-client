@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -7,7 +8,6 @@ export const LoginView = ({ onLoggedIn }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const handleSubmit = (event) => {
-    // this prevents the default behavior of the form which is to reload the entire page
     event.preventDefault();
 
     const data = {
@@ -67,3 +67,7 @@ export const LoginView = ({ onLoggedIn }) => {
     </Form>
   );
 };
+
+LoginView.propTypes = {
+  onLoggedIn: PropTypes.func.isRequired
+ };

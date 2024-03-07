@@ -46,10 +46,10 @@ export const MovieView = ({ movies }) => {
 
       <Col className="mb-5">
    <hr />
-        <h3 class="title"> SimilarMovies </h3>
+        <h3 className="title"> Similar movies </h3>
           <Row>
           {similarMovies.map((movie) => (
-            <Col key={movie.id} md={6}>
+            <Col key={movie.id}  xs={6} sm={6} md={6}>
               <MovieCard
                 movie={movie}
               />
@@ -64,9 +64,9 @@ export const MovieView = ({ movies }) => {
 
 MovieView.propTypes = {
   movies: PropTypes.shape({
-   title: PropTypes.string.isRequired,
-   description: PropTypes.string.isRequired,
-   genre: PropTypes.array,
+   title: PropTypes.string,
+   description: PropTypes.string,
+   genre: PropTypes.string,
    director: PropTypes.string, 
  }).isRequired
  };
