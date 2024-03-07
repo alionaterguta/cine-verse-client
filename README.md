@@ -28,8 +28,10 @@ personal  information,   and  create  a  list  of  their  favorite  movies.
 
 ### Deployment and hosting on Netlify
 
-  ## Install Parcel as a local developer dependency inside your project
+- Install Parcel as a local developer dependency inside your project
 
-    npm install --save-dev  parcel@2.11.0
+
+
+      npm install --save-dev  parcel@2.11.0
 
 
