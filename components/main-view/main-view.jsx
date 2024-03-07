@@ -18,7 +18,8 @@ export const MainView = () => {
   const [user, setUser] = useState(storedUser ? storedUser : null);
   const [token, setToken] = useState(storedToken ? storedToken : null);
   const [movies, setMovies] = useState([]);
-
+  const [query, setQuery] = useState("");
+ 
   useEffect(() => {
     if (!token) {
       return;
@@ -38,14 +39,38 @@ export const MainView = () => {
             director: movie.Director,
           };
         });
+        localStorage.setItem("movies", JSON.stringify(moviesFromApi));
         setMovies(moviesFromApi);
       });
   }, [token]);
+
+  const handleSearch =(e) => {
+    
+    const query = e.target.value;
+    setQuery(query);
+
+    const storedMovies = JSON.parse(localStorage.getItem("movies"));
+
+    //Filter movies by title and genre
+    const filteredMovies = storedMovies.filter((movie) => {
+      // Check if the movie's title or genre includes the search query
+      return (
+        movie.title.toLowerCase().includes(query.toLowerCase()) ||
+        movie.genre.some((genre) => genre.toLowerCase().includes(query.toLowerCase()))
+      );
+    })
+
+  //Update the state with the filtered movies
+  setMovies(filteredMovies);
+}
 
   return (
   <BrowserRouter>
   <NavigationBar
     user ={user}
+    query={query}
+    handleSearch={handleSearch}
+    movies={movies}
     onLoggedOut={() => {
       setUser(null);
       setToken(null);
@@ -98,9 +123,10 @@ export const MainView = () => {
            >
           {user ? (
           <ProfileView
-          token={token}
-          user={user}
-          movies={movies}
+            token={token}
+            user={user}
+            movies={movies}
+            onSubmit={(user) => setUser(user)}
           />) : (<Navigate to="/login" />)
           } 
         </Col>
