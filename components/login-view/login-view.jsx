@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -7,13 +8,13 @@ export const LoginView = ({ onLoggedIn }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const handleSubmit = (event) => {
-    // this prevents the default behavior of the form which is to reload the entire page
     event.preventDefault();
 
     const data = {
       UserName: username,
       Password: password,
     };
+
     fetch("https://cine-verse-b8832aa84c3e.herokuapp.com/login", {
       method: "POST",
       headers: {
@@ -26,7 +27,7 @@ export const LoginView = ({ onLoggedIn }) => {
       console.log("Login response: ", data);
       if (data.user) {
         localStorage.setItem("token", data.token);
-        localStorage.setItem("user", data.user);
+        localStorage.setItem("user",  JSON.stringify(data.user));
         onLoggedIn(data.user, data.token);
       } else {
         alert("No such user");
@@ -66,3 +67,7 @@ export const LoginView = ({ onLoggedIn }) => {
     </Form>
   );
 };
+
+LoginView.propTypes = {
+  onLoggedIn: PropTypes.func.isRequired
+ };

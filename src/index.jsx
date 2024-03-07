@@ -1,16 +1,13 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./index.scss";
+import { createRoot } from 'react-dom/client';
+
+import { MainView } from '../components/main-view/main-view';
 import Container from "react-bootstrap/Container"; 
 
-import { createRoot } from 'react-dom/client';
-import { MainView } from '../components/main-view/main-view';
-//Import statement to indicate to bundle './index.scss'
-import './index.scss';
-
-// Main component (will eventually use all the others)
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./index.scss";
 
 const CineVerseApplication = () => {
-  return <Container> <MainView /> </Container>
+  return (<Container> <MainView /> </Container>);
 };
 
 const container = document.querySelector("#root");
