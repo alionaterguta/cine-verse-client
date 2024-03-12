@@ -23,7 +23,7 @@ useEffect(() => {
     {
     method: 'POST',
     // body: JSON.stringify(favoriteMoviesData),
-    headers: { "Authorization": `Bearer ${token}`,
+    headers: { "Authorization": `Bearer ${storedToken}`,
       'Content-Type': 'application/json'}
     },
   )
@@ -53,7 +53,7 @@ const removeFromFavorites = () => {
     `https://cine-verse-b8832aa84c3e.herokuapp.com/users/${user.UserName}/movies/${encodeURIComponent(movie.title)}`,
     {
     method: 'DELETE',
-    headers: { "Authorization": `Bearer ${token}`,
+    headers: { "Authorization": `Bearer ${storedToken}`,
       'Content-Type': 'application/json'}
     },
   )
