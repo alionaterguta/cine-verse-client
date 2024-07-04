@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useParams } from "react-router";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import { MovieCard } from "../movie-card/movie-card";
 
 import Button from "react-bootstrap/Button";
@@ -17,16 +17,15 @@ export const MovieView = ({ movies }) => {
   // Find similar movies based on genre
   const similarMovies = movies.filter((m) => {
     return (
-      m.id !== movie.id &&
-      m.genre.some((genre) => movie.genre.includes(genre)) 
-    )}
+      m.id !== movie.id && m.genre.some((genre) => movie.genre.includes(genre))
     );
+  });
 
   return (
     <div>
-     <div> 
+      <div>
         <img height={300} src={movie.image} />
-      </div> 
+      </div>
       <div>
         <h4>{movie.title}</h4>
       </div>
@@ -45,17 +44,14 @@ export const MovieView = ({ movies }) => {
       </Link>
 
       <Col className="mb-5">
-   <hr />
+        <hr />
         <h3 className="title"> Similar movies </h3>
-          <Row>
+        <Row>
           {similarMovies.map((movie) => (
-            <Col key={movie.id}  xs={6} sm={6} md={6}>
-              <MovieCard
-                movie={movie}
-              />
+            <Col key={movie.id} xs={6} sm={4} md={4}>
+              <MovieCard movie={movie} />
             </Col>
-          ))
-        }
+          ))}
         </Row>
       </Col>
     </div>
@@ -64,9 +60,9 @@ export const MovieView = ({ movies }) => {
 
 MovieView.propTypes = {
   movies: PropTypes.shape({
-   title: PropTypes.string,
-   description: PropTypes.string,
-   genre: PropTypes.string,
-   director: PropTypes.string, 
- }).isRequired
- };
+    title: PropTypes.string,
+    description: PropTypes.string,
+    genre: PropTypes.string,
+    director: PropTypes.string,
+  }).isRequired,
+};
