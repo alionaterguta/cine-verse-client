@@ -5,13 +5,13 @@ import Col from "react-bootstrap/Col";
 
 import { Link } from "react-router-dom";
 import { MovieCard } from "../movie-card/movie-card";
-import "./favorite-movies.scss"
+import "./favorite-movies.scss";
 
-export const FavoriteMovies = ({user, favoriteMovies}) => {
+export const FavoriteMovies = ({ user, favoriteMovies }) => {
   return (
     <Col className="mb-5">
       <h3 className="title">List of favorite movies</h3>
-      <Row>
+      <Row row-gap="20px">
         {favoriteMovies.map((movie) => (
           <Col key={movie._id} md={6}>
             <Link to={`/movies/${movie._id}`} />
@@ -25,8 +25,8 @@ export const FavoriteMovies = ({user, favoriteMovies}) => {
       </Row>
     </Col>
   );
-}
+};
 FavoriteMovies.propTypes = {
   favoriteMovies: PropTypes.array.isRequired,
-  user: PropTypes.object.isRequired
+  user: PropTypes.object.isRequired,
 };
