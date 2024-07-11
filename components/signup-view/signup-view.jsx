@@ -40,6 +40,7 @@ export const SingupView = () => {
     <Form onSubmit={handleSubmit}>
       <br />
       <h1> Create an account </h1>
+      <br />
       <Form.Group controlId="formUsername">
         <Form.Label>Username:</Form.Label>
         <Form.Control
@@ -50,6 +51,7 @@ export const SingupView = () => {
           required
         />
       </Form.Group>
+      <br />
       <Form.Group controlId="formBirthday">
         <Form.Label> Birthday: </Form.Label>
         <Form.Control
@@ -83,7 +85,7 @@ export const SingupView = () => {
       <br />
       <Button variant="primary" type="submit">
         {" "}
-        Sign up{" "}
+        Sign Up{" "}
       </Button>
     </Form>
   );

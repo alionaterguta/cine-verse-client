@@ -1,16 +1,16 @@
 import React from "react";
-import Form from"react-bootstrap/Form";
+import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import PropTypes from "prop-types";
 
 export const UpdateUser = ({ formData, handleUpdate, handleSubmit }) => {
-
   return (
     <Row>
       <Form onSubmit={handleSubmit}>
         <br />
         <h2> Update profile information </h2>
+        <br />
         <Form.Group controlId="formUsername">
           <Form.Label>Username:</Form.Label>
           <Form.Control
@@ -20,7 +20,7 @@ export const UpdateUser = ({ formData, handleUpdate, handleSubmit }) => {
             onChange={(e) => handleUpdate(e)}
             required
           />
-        <br />
+          <br />
         </Form.Group>
         <Form.Group controlId="formBirthday">
           <Form.Label> Birthday: </Form.Label>
@@ -43,8 +43,7 @@ export const UpdateUser = ({ formData, handleUpdate, handleSubmit }) => {
         </Form.Group>
         <br />
         <Form.Group controlId="formPassword">
-          <Form.Label>Password:
-          </Form.Label>
+          <Form.Label>Password:</Form.Label>
           <Form.Control
             type="password"
             minLength={8}
@@ -56,14 +55,14 @@ export const UpdateUser = ({ formData, handleUpdate, handleSubmit }) => {
         <Button variant="primary" type="submit">
           {" "}
           Submit changes{" "}
-        </Button> 
-        </Form>  
-      <br /> 
-     </Row>   
+        </Button>
+      </Form>
+      <br />
+    </Row>
   );
 };
 UpdateUser.propTypes = {
   formData: PropTypes.object.isRequired,
   handleUpdate: PropTypes.func.isRequired,
-  handleSubmit: PropTypes.func.isRequired
+  handleSubmit: PropTypes.func.isRequired,
 };

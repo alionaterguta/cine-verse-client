@@ -40,7 +40,7 @@ export const NavigationBar = ({
                 </Nav.Link>
                 <Nav.Link as={Link} to="/users">
                   {" "}
-                  Sign up{" "}
+                  Signup{" "}
                 </Nav.Link>
               </>
             ) : (

@@ -11,7 +11,7 @@ export const FavoriteMovies = ({ user, favoriteMovies }) => {
   return (
     <Col className="mb-5">
       <h3 className="title">List of favorite movies</h3>
-      <Row row-gap="20px">
+      <Row>
         {favoriteMovies.map((movie) => (
           <Col key={movie._id} md={6}>
             <Link to={`/movies/${movie._id}`} />
