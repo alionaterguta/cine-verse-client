@@ -39,7 +39,7 @@ export const SingupView = () => {
   return (
     <Form onSubmit={handleSubmit}>
       <br />
-      <h1> Create an account </h1>
+      <h1> Create an account</h1>
       <br />
       <Form.Group controlId="formUsername">
         <Form.Label>Username:</Form.Label>

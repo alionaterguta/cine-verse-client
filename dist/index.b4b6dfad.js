@@ -42316,7 +42316,7 @@ const LoginView = ({ onLoggedIn })=>{
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: " Login to your account "
+                children: " Log in to your account"
             }, void 0, false, {
                 fileName: "components/login-view/login-view.jsx",
                 lineNumber: 44,
@@ -42474,7 +42474,7 @@ const SingupView = ()=>{
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: " Create an account "
+                children: " Create an account"
             }, void 0, false, {
                 fileName: "components/signup-view/signup-view.jsx",
                 lineNumber: 42,
