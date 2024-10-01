@@ -33,4 +33,6 @@ Open the Web Browser at http://localhost:1234
 
 - Install Parcel as a local developer dependency inside your project
 
-      npm install --save-dev  parcel@2.11.0
+      npm install --save-dev  parcel@latest
+
+      npm run start
